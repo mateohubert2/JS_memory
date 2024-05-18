@@ -22,5 +22,8 @@ export class ViewMemory extends Observer
         enfant.classList.add("card");
         enfant.innerHTML = "&#x" + (this.#controllerMemory.card.value).toString(16);
         cards.appendChild(enfant);
+        enfant.addEventListener("click", () => {
+            this.#controllerMemory.createCard();
+        });
     }
 }
