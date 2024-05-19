@@ -19,5 +19,9 @@ export class ControllerMemory extends Notifier
     newGame(){
         this.#memory.newGame(10);
         this.notify();
+        this.saveGame();
+    }
+    saveGame(){
+        localStorage.setItem("memory", JSON.stringify(this.memory.toData()));
     }
 }

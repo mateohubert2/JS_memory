@@ -24,4 +24,17 @@ export class Memory {
     getCard(index){
         return this.#cards[index];
     }
+    toData(){
+        let cards = [];
+        for(let i = 0; i < this.getCardsNumber(); i++){
+            let temp = {
+                value: this.getCard(i).value,
+            }
+            cards.push(temp);
+        }
+        let tableau = {
+            cards,
+        }
+        return tableau;
+    }
 }
