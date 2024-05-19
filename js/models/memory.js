@@ -14,7 +14,8 @@ export class Memory {
             if((i%2 === 0)&&(i !== 0)){
                 valeur++;
             }
-            this.#cards.push(new Card(valeur));
+            let emplacement = Math.floor(Math.random()*this.#cards.length);
+            this.#cards.splice(emplacement, 0, new Card(valeur));
         }
     }
     getCardsNumber(){
