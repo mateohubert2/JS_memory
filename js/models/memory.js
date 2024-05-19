@@ -35,7 +35,10 @@ export class Memory {
         return tableau;
     }
     fromData(myData){
-        myPartie = JSON.parse(myData);
-        this.#cards.splice(0, this.#cards.getCardsNumber());
+        this.#cards.splice(0, this.getCardsNumber());
+        for(let i = 0; i < myData.cards.length; i++){
+            this.#cards.push(myData.cards[i]);
+        }
+        return this.#cards;
     }
 }
