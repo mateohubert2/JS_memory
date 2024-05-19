@@ -10,5 +10,6 @@ export class Card{
         const myCard = {
             value: this.value,
         }
+        return myCard;
     }
 }

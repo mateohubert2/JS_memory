@@ -27,14 +27,15 @@ export class Memory {
     toData(){
         let cards = [];
         for(let i = 0; i < this.getCardsNumber(); i++){
-            let temp = {
-                value: this.getCard(i).value,
-            }
-            cards.push(temp);
+            cards.push(this.getCard(i).toData());
         }
         let tableau = {
             cards,
         }
         return tableau;
+    }
+    fromData(myData){
+        myPartie = JSON.parse(myData);
+        this.#cards.splice(0, this.#cards.getCardsNumber());
     }
 }
